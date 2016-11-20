@@ -6,11 +6,13 @@
 
 Result:
 
-    Input: Kent kopte en Kent-skiva
+    Input: Kent gick till torget och fick en Kent-skiva
     Parse:
-    en NNP ROOT
-    +-- kopte NNP nsubj
-    |   +-- Kent NNP nn
-    +-- Kent-skiva NNP dobj    
-
-
+    gick NN ROOT
+    +-- Kent NNP nn
+    +-- till IN prep
+        +-- fick NN pobj
+            +-- torget NN nn
+            +-- och NN nn
+            +-- en IN prep
+                +-- Kent-skiva NNP pobj
