@@ -1,18 +1,24 @@
 # Use Googles Syntaxnet pretrained with Swedish model
 
 ## How to use:
-
-    echo "Kent gick till torget och fick en Kent-skiva" | docker run -i --rm irony/syntaxnet-swedish > out.txt
+    echo "Jag vill byta abonnemang till mer data fron och med imorgon" | docker run -i --rm irony/syntaxnet-swedish > out.txt
+    cat out.txt
 
 Result:
 
-    Input: Kent gick till torget och fick en Kent-skiva
+    Input: Jag vill byta abonnemang till mer data fron och med imorgon
     Parse:
-    gick NN ROOT
-    +-- Kent NNP nn
+    vill NN ROOT
+    +-- Jag NNP nsubj
+    +-- abonnemang NNP dobj
+    |   +-- byta NNP nn
     +-- till IN prep
-        +-- fick NN pobj
-            +-- torget NN nn
-            +-- och NN nn
-            +-- en IN prep
-                +-- Kent-skiva NNP pobj
+        +-- imorgon NN pobj
+            +-- mer NN amod
+            +-- fron NN nn
+            |   +-- data NNS nn
+            +-- och NN amod
+            +-- med VBN amod
+
+## To switch language
+Just look at the dockerfile and replace Swedish to any of the supported languages. 
