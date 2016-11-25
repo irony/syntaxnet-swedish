@@ -1,12 +1,12 @@
 # Use Googles Syntaxnet pretrained with Swedish model
 
 ## How to use:
-    echo "Jag vill byta abonnemang till mer data fron och med imorgon" | docker run -i --rm irony/syntaxnet-swedish > out.txt
+    echo "Jag vill byta abonnemang till mer data imorgon" | docker run -i --rm irony/syntaxnet-swedish > out.txt
     cat out.txt
 
 Result:
 
-    Input: Jag vill byta abonnemang till mer data fron och med imorgon
+    Input: Jag vill byta abonnemang till mer data imorgon
     Parse:
     vill NN ROOT
     +-- Jag NNP nsubj
